@@ -204,7 +204,7 @@ class Jake_SwitecX25:
         # vel now defines delay
         i = 0
         # this is why vel must not be greater than the last vel in the table.
-        while self.accelTable[i][0] < self.vel:
+        while self.accel_table[i][0] < self.vel:
             i += 1
 
         self.micro_delay = self.accel_table[i][1]
