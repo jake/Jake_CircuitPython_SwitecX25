@@ -92,8 +92,8 @@ class Jake_SwitecX25:
         self.dir = 0                # direction -1,0,1
         self.stopped = True         # True if stopped
 
-        self.time0                  # time when we entered this state
-        self.micro_delay            # microsecs until next state
+        self.time0 = 0              # time when we entered this state
+        self.micro_delay = 0        # microsecs until next state
 
         # accel table which can be modified
         self.accel_table = SWITECX25_DEFAULT_ACCELT_TABLE[:]
