@@ -1,23 +1,6 @@
 Introduction
 ============
 
-
-
-
-.. image:: https://img.shields.io/discord/327254708534116352.svg
-    :target: https://adafru.it/discord
-    :alt: Discord
-
-
-.. image:: https://github.com/jake/Jake_CircuitPython_SwitecX25/workflows/Build%20CI/badge.svg
-    :target: https://github.com/jake/Jake_CircuitPython_SwitecX25/actions
-    :alt: Build Status
-
-
-.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
-    :target: https://github.com/psf/black
-    :alt: Code Style: Black
-
 CircuitPython port of Arduino `Switec X25 library <https://github.com/clearwater/SwitecX25>`_.
 
 
