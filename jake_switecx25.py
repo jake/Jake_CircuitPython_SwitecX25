@@ -95,11 +95,9 @@ class Jake_SwitecX25:
         self.time0 = 0              # time when we entered this state
         self.micro_delay = 0        # microsecs until next state
 
-        # accel table which can be modified
-        self.accel_table = SWITECX25_DEFAULT_ACCELT_TABLE[:]
-
         # fastest vel allowed defaults to last value in table
-        self.max_vel = self.accel_table[len(self.accel_table)-1][0]
+        self.max_vel = SWITECX25_DEFAULT_ACCELT_TABLE[len(
+            SWITECX25_DEFAULT_ACCELT_TABLE)-1][0]
 
     def step_up(self):
         if (self.current_step < self.steps):
@@ -205,10 +203,10 @@ class Jake_SwitecX25:
         # vel now defines delay
         i = 0
         # this is why vel must not be greater than the last vel in the table.
-        while self.accel_table[i][0] < self.vel:
+        while SWITECX25_DEFAULT_ACCELT_TABLE[i][0] < self.vel:
             i += 1
 
-        self.micro_delay = self.accel_table[i][1]
+        self.micro_delay = SWITECX25_DEFAULT_ACCELT_TABLE[i][1]
         self.time0 = time.monotonic()
 
     def _write_io(self):
