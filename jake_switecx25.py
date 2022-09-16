@@ -111,6 +111,7 @@ class Jake_SwitecX25:
         if (self.current_step > 0):
             self.current_step -= 1
             self.current_state = (self.current_state + 5) % self.state_count
+            self._write_io()
 
     def zero(self):
         self.current_step = self.steps - 1
@@ -136,9 +137,9 @@ class Jake_SwitecX25:
                 self._advance()
 
     def set_position(self, pos):
-        # pos is unsigned so don't need to check for <0
+        # pos is unsigned so don't need to check for < 0
         if (pos >= self.steps):
-            pos = self.steps-1
+            pos = self.steps - 1
 
         self.target_step = pos
 
