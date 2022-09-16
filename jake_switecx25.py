@@ -74,13 +74,13 @@ class Jake_SwitecX25:
         self.steps = steps
 
         self.pins = []
-        self.pins[0] = digitalio.DigitalInOut(pin1)
+        self.pins.append(digitalio.DigitalInOut(pin1))
+        self.pins.append(digitalio.DigitalInOut(pin2))
+        self.pins.append(digitalio.DigitalInOut(pin3))
+        self.pins.append(digitalio.DigitalInOut(pin4))
         self.pins[0].direction = digitalio.Direction.OUTPUT
-        self.pins[1] = digitalio.DigitalInOut(pin2)
         self.pins[1].direction = digitalio.Direction.OUTPUT
-        self.pins[2] = digitalio.DigitalInOut(pin3)
         self.pins[2].direction = digitalio.Direction.OUTPUT
-        self.pins[3] = digitalio.DigitalInOut(pin4)
         self.pins[3].direction = digitalio.Direction.OUTPUT
 
         self.state_count = len(SWITECX25_STATE_MAP)
