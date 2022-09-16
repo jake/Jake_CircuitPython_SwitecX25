@@ -18,7 +18,7 @@ Introduction
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
-Port of Arduino SwitecX25 library
+CircuitPython port of Arduino `Switec X25 library <https://github.com/clearwater/SwitecX25>`_.
 
 
 Dependencies
@@ -35,31 +35,6 @@ or individual libraries can be installed using
 =====================
 .. note:: This library is not available on PyPI yet. Install documentation is included
    as a standard element. Stay tuned for PyPI availability!
-
-.. todo:: Remove the above note if PyPI version is/will be available at time of release.
-
-On supported GNU/Linux systems like the Raspberry Pi, you can install the driver locally `from
-PyPI <https://pypi.org/project/jake-circuitpython-switecx25/>`_.
-To install for current user:
-
-.. code-block:: shell
-
-    pip3 install jake-circuitpython-switecx25
-
-To install system-wide (this may be required in some cases):
-
-.. code-block:: shell
-
-    sudo pip3 install jake-circuitpython-switecx25
-
-To install in a virtual environment in your current project:
-
-.. code-block:: shell
-
-    mkdir project-name && cd project-name
-    python3 -m venv .venv
-    source .env/bin/activate
-    pip3 install jake-circuitpython-switecx25
 
 Installing to a Connected CircuitPython Device with Circup
 ==========================================================
@@ -87,15 +62,19 @@ Or the following command to update an existing version:
 Usage Example
 =============
 
-.. todo:: Add a quick, simple example. It and other examples should live in the
-examples folder and be included in docs/examples.rst.
+.. code-block:: python
 
-Documentation
-=============
-API documentation for this library can be found on `Read the Docs <https://circuitpython-switecx25.readthedocs.io/>`_.
+    import jake_switecx25
 
-For information on building library documentation, please check out
-`this guide <https://learn.adafruit.com/creating-and-sharing-a-circuitpython-library/sharing-our-docs-on-readthedocs#sphinx-5-1>`_.
+    STEPS = 315*3
+
+    motor = jake_switecx25.Jake_SwitecX25(STEPS, board.IO2, board.IO3, board.IO4, board.IO5)
+    motor.zero()
+    motor.set_position(STEPS / 2)
+
+    while True:
+        motor.update()
+
 
 Contributing
 ============
