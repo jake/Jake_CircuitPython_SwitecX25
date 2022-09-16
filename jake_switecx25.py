@@ -127,13 +127,13 @@ class Jake_SwitecX25:
     def update(self):
         if not self.stopped:
             if time.monotonic() - self.time0 >= self.micro_delay:
-                self.advance()
+                self._advance()
 
     # This will give you smoother movements, but your application will block
     def update_blocking(self):
         while not self.stopped:
             if time.monotonic() - self.time0 >= self.micro_delay:
-                self.advance()
+                self._advance()
 
     def set_position(self, pos):
         # pos is unsigned so don't need to check for <0
